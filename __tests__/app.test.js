@@ -10,6 +10,11 @@ describe('backend-express-template routes', () => {
   it('example test - delete me!', () => {
     expect(1).toEqual(1);
   });
+  it('/signs should return a list of signs', async () => {
+    const res = await request(app).get('/signs');
+    const expected = [];
+    expect(res.body).toEqual(expected);
+  });
   afterAll(() => {
     pool.end();
   });
